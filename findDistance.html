@@ -1,0 +1,16 @@
+<html>
+<head>
+	<title>Find Distance</title>
+</head>
+<script>
+function distance(lat1, lon1, lat2, lon2) {
+    var R = 6371000;
+    var a = 0.5 - Math.cos((lat2 - lat1) * Math.PI / 180) / 2 + Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) * (1 - Math.cos((lon2 - lon1) * Math.PI / 180)) / 2;
+    return Math.round(R * 2 * Math.asin(Math.sqrt(a)));
+}
+// calculates the distance between SFO and NYC for example.
+console.log(distance(40.785091,‎37.615223,-73.968285,‎-122.389977));
+</script>
+<body>
+</body>
+</html>
